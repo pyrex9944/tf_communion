@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_vpc" "ownvpc" {
-  cidr_block       = "192.168.0.0/16"
+  cidr_block       = "10.0.0.0/16"
   enable_dns_hostnames = true
 
   tags = merge(
@@ -17,7 +17,7 @@ resource "aws_vpc" "ownvpc" {
 
 resource "aws_subnet" "public" {
   vpc_id     = aws_vpc.ownvpc.id
-  cidr_block = "192.168.1.0/24"
+  cidr_block = "10.0.1.0/24"
   availability_zone = "eu-central-1a"
 
   tags = merge(
@@ -31,7 +31,7 @@ resource "aws_subnet" "public" {
 
 resource "aws_subnet" "private" {
     vpc_id = aws_vpc.ownvpc.id
-    cidr_block = "192.168.0.0/24"
+    cidr_block = "10.0.0.0/24"
     availability_zone = "eu-central-1a"
 
     tags = merge(
@@ -147,7 +147,7 @@ resource "aws_instance" "communion" {
   availability_zone = "eu-central-1a"
 
   root_block_device {
-    volume_size = 20 # in GB <<----- I increased this!
+    volume_size = 20
     volume_type = "gp2"
     encrypted   = false
   }
