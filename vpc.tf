@@ -50,7 +50,7 @@ resource "aws_internet_gateway" "internet_gateway" {
     )
 }
 
-resource "aws_route_table" "public-rt" {
+resource "aws_route_table" "public_rt" {
   vpc_id = aws_vpc.staging_vpc.id
 
 
@@ -70,7 +70,7 @@ resource "aws_route_table" "public-rt" {
 
 resource "aws_route_table_association" "public" {
   subnet_id      = aws_subnet.public_subnet.id
-  route_table_id = aws_route_table.public-rt.id
+  route_table_id = aws_route_table.public_rt.id
 }
 
 
