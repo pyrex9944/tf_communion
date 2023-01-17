@@ -2,8 +2,8 @@ resource "aws_instance" "communion" {
   ami           = "${var.ami}"
   instance_type = "${var.instance_type}"
   associate_public_ip_address = true
-  subnet_id = aws_subnet.public.id
-  vpc_security_group_ids = ["${aws_security_group.mywebsecurity.id}"]
+  subnet_id = aws_subnet.public_subnet.id
+  vpc_security_group_ids = ["${aws_security_group.staging_sg.id}"]
   key_name = var.key_name
   availability_zone = "${var.availability_zone}"
 

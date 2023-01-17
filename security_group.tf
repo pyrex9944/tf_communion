@@ -1,7 +1,7 @@
-resource "aws_security_group" "mywebsecurity" {
-  name        = "${var.environment}-sg"
+resource "aws_security_group" "staging_sg" {
+  name        = "${var.environment}_sg"
   description = "Allow http,ssh,icmp"
-  vpc_id      = aws_vpc.ownvpc.id
+  vpc_id      = aws_vpc.staging_vpc.id
 
 
   ingress {
@@ -36,7 +36,7 @@ resource "aws_security_group" "mywebsecurity" {
   
   tags = merge(
         {
-            Name        = "${var.environment}-sg"
+            Name        = "${var.environment}_sg"
             Environment = "${var.environment}"
         },
         var.project_tags
