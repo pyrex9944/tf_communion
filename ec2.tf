@@ -4,7 +4,7 @@ resource "aws_instance" "communion" {
   associate_public_ip_address = true
   subnet_id = aws_subnet.public.id
   vpc_security_group_ids = ["${aws_security_group.mywebsecurity.id}"]
-  key_name = "staging_rsa_key"
+  key_name = var.key_name
   availability_zone = "${var.aws_region}a"
 
   root_block_device {

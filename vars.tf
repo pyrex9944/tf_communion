@@ -14,7 +14,7 @@ variable "volume_type" {
     default = "gp2"
 }
 
-variable "volume_type" {
+variable "volume_size" {
     type        = number
     description = "Volume type for EC2"
     default = 20
@@ -66,4 +66,22 @@ variable "availability_zones" {
     type        = list(string)
     description = "AZ in which all the resources will be deployed"
     default     = ["eu-central-1a"]
+}
+
+variable "rute_table_cidr" {
+    type        = string
+    description = "CIDR block for route table"
+    default     = "0.0.0.0/0"
+}
+
+variable "key_name" {
+    type        = string
+    description = "Key pair name for ec2"
+    default     = "staging_rsa_key"
+}
+
+variable "availability_zone" {
+    type        = string
+    description = "AZ in which all the resources will be deployed"
+    default     = "eu-central-1a"
 }
