@@ -5,7 +5,7 @@ resource "aws_instance" "communion" {
   subnet_id = aws_subnet.public.id
   vpc_security_group_ids = ["${aws_security_group.mywebsecurity.id}"]
   key_name = var.key_name
-  availability_zone = "${var.aws_region}a"
+  availability_zone = "${var.availability_zone}"
 
   root_block_device {
     volume_size = "${var.volume_size}"

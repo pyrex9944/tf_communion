@@ -28,7 +28,7 @@ resource "aws_subnet" "public" {
 resource "aws_subnet" "private" {
     vpc_id = aws_vpc.ownvpc.id
     cidr_block = "${var.public_subnets_cidr}"
-    availability_zone = "${var.availability_zone}a"
+    availability_zone = "${var.availability_zone}"
 
     tags = merge(
         {
