@@ -55,7 +55,7 @@ resource "aws_route_table" "my_route_table1" {
 
 
   route {
-    cidr_block = "0.0.0.0/0"
+    cidr_block = var.rute_table_cidr
     gateway_id = aws_internet_gateway.mygw.id
   }
 
