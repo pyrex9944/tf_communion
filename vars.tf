@@ -1,5 +1,5 @@
 variable "aws_region" {
-    default = "eu-central-1"
+    default = "eu-west-2"
 }
 
 variable "instance_type" {
@@ -24,8 +24,8 @@ variable "volume_size" {
 
 variable "ami" {
     type        = string
-    description = "Instance AMI for eu-central-1 region ubuntu 22.04"
-    default = "ami-0039da1f3917fa8e3"
+    description = "Instance AMI for eu-west-2 region ubuntu 22.04"
+    default = "ami-01b8d743224353ffe"
 }
 
 variable "environment" {
@@ -65,7 +65,7 @@ variable "public_subnets_cidr" {
 variable "availability_zones" {
     type        = list(string)
     description = "AZ in which all the resources will be deployed"
-    default     = ["eu-central-1a"]
+    default     = ["eu-west-2a"]
 }
 
 variable "rute_table_cidr" {
@@ -77,11 +77,11 @@ variable "rute_table_cidr" {
 variable "key_name" {
     type        = string
     description = "Key pair name for ec2"
-    default     = "staging_rsa_key"
+    default     = "staging_key"
 }
 
 variable "availability_zone" {
     type        = string
     description = "AZ in which all the resources will be deployed"
-    default     = "eu-central-1a"
+    default     = "eu-west-2a"
 }

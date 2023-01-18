@@ -43,7 +43,7 @@ resource "aws_internet_gateway" "internet_gateway" {
   vpc_id = aws_vpc.staging_vpc.id
   tags = merge(
         {
-            Name        = "${var.environment}_internet_gateway"
+            Name        = "${var.environment}_igw"
             Environment = "${var.environment}"
         },
         var.project_tags
@@ -61,7 +61,7 @@ resource "aws_route_table" "public_rt" {
 
   tags = merge(
         {
-            Name        = "${var.environment}_route_table"
+            Name        = "${var.environment}_rt"
             Environment = "${var.environment}"
         },
         var.project_tags
